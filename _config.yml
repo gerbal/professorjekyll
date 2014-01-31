@@ -3,6 +3,19 @@ pygments: true
 
 baseurl: /professorjekyll
 
+# These can contain uppercase: they'll be lowercased in the URL
+page-order:
+  - syllabus
+  - schedule
+  - assignments
+  - people
+  - feedback
+  - music
+
+# Same note RE case above
+python-extra-pages:
+  - console
+
 python: false
 
 course:

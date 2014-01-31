@@ -36,14 +36,13 @@
             <div class="header">
               <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
               <p>
-              <a class="extra" href="{{ site.baseurl }}/syllabus.html">syllabus</a>
-              <a class="extra" href="{{ site.baseurl }}/schedule.html">schedule</a>
-              <a class="extra" href="{{ site.baseurl }}/assignments.html">assignments</a>
-              <a class="extra" href="{{ site.baseurl }}/people.html">people</a>
-              <a class="extra" href="{{ site.baseurl }}/feedback.html">feedback</a>
-              <a class="extra" href="{{ site.baseurl }}/music.html">music</a>
-              {% if site.python == true %}
-              <a class="extra" href="{{ site.baseurl }}/console.html">console</a>
+              {% for pagename in site.page-order %}
+                <a class="extra" href="{{ site.baseurl }}/{{ pagename | lower }}.html">{{ pagename }}</a>
+                {% endfor %}
+                {% if site.python == true %}
+                {% for pagename in site.python-extra-pages %}
+                <a class="extra" href="{{ site.baseurl }}/{{ pagename }}.html">{{ pagename }}</a>
+                {% endfor %}                
               {% endif %}
               </p>
             </div>
